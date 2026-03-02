@@ -6,8 +6,8 @@ public class Character_controller : MonoBehaviour
 {
     [Header("Ship parameters")]
     
-    [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _maxSpeed = 10f;
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _maxSpeed = 5f;
     [SerializeField] private float _rotationSpeed = 180f;
     [SerializeField] private float _ammoSpeed = 8f;
     [SerializeField] private float _fireRate = 0.25f;
@@ -86,10 +86,14 @@ public class Character_controller : MonoBehaviour
             nextFireTime = Time.time + _fireRate;
         }
     }
-    
 
-     
-        
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Asteroid"))
+        {
+            isAlive = false;
+        }
+    }
             
     
 }
