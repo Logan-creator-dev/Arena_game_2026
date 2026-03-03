@@ -1,16 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreSysteme : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public UnityEvent OnScoreChanged;
+    public int _score { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public void AddScore(int score)
     {
-        
+        _score += score;
+        OnScoreChanged.Invoke();
     }
 }

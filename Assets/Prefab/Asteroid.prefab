@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8917441209712162438}
   - component: {fileID: 596476896778581949}
   - component: {fileID: 4497018838507972867}
+  - component: {fileID: 4766399777938626854}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -260,3 +261,15 @@ MonoBehaviour:
   destroyedParticles: {fileID: 2837095361142096164, guid: 0074a9fa66bfc56419aaa803de1b4bf2, type: 3}
   size: 3
   gameManager: {fileID: 0}
+--- !u!114 &4766399777938626854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943329225969004552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7ce49fc71f6e94fa650a30b07ddb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnnemyScoreAllocation
