@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
    [SerializeField] private Asteroid _asteroidPrefab;
@@ -49,5 +50,21 @@ public class GameManager : MonoBehaviour
       Vector2 worldSpawnPosition = Camera.main.ViewportToWorldPoint(viewportSpawnPosition);
       Asteroid asteroid = Instantiate(_asteroidPrefab, worldSpawnPosition, Quaternion.identity);
       asteroid.gameManager = this;
+   }
+
+   public void GameOver()
+   {
+      StartCoroutine(Restart());
+   }
+
+   private IEnumerator Restart()
+   {
+      Debug.Log("Game Over");
+      
+      yield return new WaitForSeconds(2f);
+      
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+      yield return null;
    }
 }

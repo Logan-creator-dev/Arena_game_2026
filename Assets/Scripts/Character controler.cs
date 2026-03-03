@@ -16,6 +16,7 @@ public class Character_controller : MonoBehaviour
     
     [SerializeField] private Transform _ammoSpawn;
     [SerializeField] private Rigidbody2D _ammoPrefab;
+    [SerializeField] private ParticleSystem destroyedParticles;
     
     float nextFireTime = 0f;
     private Rigidbody2D Rigidbody;
@@ -92,8 +93,16 @@ public class Character_controller : MonoBehaviour
         if (collision.CompareTag("Asteroid"))
         {
             isAlive = false;
+            
+            GameManager gameManager = FindAnyObjectByType<GameManager>();
+
+            gameManager.GameOver();
+            
+            Instantiate(destroyedParticles, transform.position, Quaternion.identity);
+            
+            Destroy(gameObject);
+
+
         }
     }
-            
-    
 }

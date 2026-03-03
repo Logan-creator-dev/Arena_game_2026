@@ -2125,6 +2125,7 @@ MonoBehaviour:
   _fireRate: 0.25
   _ammoSpawn: {fileID: 1166265203}
   _ammoPrefab: {fileID: 641814133663205013, guid: 988bab8e8a6d33d43b2d2491d697a9de, type: 3}
+  destroyedParticles: {fileID: 2837095361142096164, guid: 0074a9fa66bfc56419aaa803de1b4bf2, type: 3}
 --- !u!50 &4336654341798905659
 Rigidbody2D:
   serializedVersion: 5

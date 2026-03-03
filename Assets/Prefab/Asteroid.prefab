@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4497018838507972867}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,5 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665b5200c1d636749b436630d6654cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  destroyedParticles: {fileID: 2837095361142096164, guid: 0074a9fa66bfc56419aaa803de1b4bf2, type: 3}
   size: 3
   gameManager: {fileID: 0}

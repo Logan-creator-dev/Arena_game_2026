@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem destroyedParticles;
     public int size = 3;
     
     public GameManager gameManager;
@@ -33,6 +34,8 @@ public class Asteroid : MonoBehaviour
                     newAsteroid.gameManager = gameManager;
                 }
             }
+            
+            Instantiate(destroyedParticles, transform.position, Quaternion.identity);
             
             Destroy(gameObject);
         }
