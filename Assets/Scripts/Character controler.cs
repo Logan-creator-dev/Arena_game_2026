@@ -35,6 +35,7 @@ public class Character_controller : MonoBehaviour
             HandleSpeed();
             HandleRotation();
             HandleShooting();
+            HandleHyperSpace();
         }
     }
 
@@ -85,6 +86,27 @@ public class Character_controller : MonoBehaviour
             ammo.AddForce(_ammoSpeed * transform.up, ForceMode2D.Impulse);
             
             nextFireTime = Time.time + _fireRate;
+        }
+    }
+
+    private void HandleHyperSpace()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            float chance = Random.value;
+
+            if (chance < 0.15f)
+            {
+                Destroy(gameObject);
+            }
+
+            else
+            {
+                float x = Random.Range(-8f, 8f);
+                float y = Random.Range(-4f, 4f);
+
+                transform.position = new Vector2(x, y);
+            }
         }
     }
 
