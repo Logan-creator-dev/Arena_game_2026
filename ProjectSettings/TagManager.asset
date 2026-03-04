@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ammo
   - Asteroid
+  - player
   layers:
   - Default
   - TransparentFX

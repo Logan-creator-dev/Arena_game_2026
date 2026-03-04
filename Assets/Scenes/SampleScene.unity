@@ -2436,6 +2436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TinyShip1
       objectReference: {fileID: 0}
+    - target: {fileID: 6548030743761368516, guid: 37f603d66e1d8364b95c962024ed619e, type: 3}
+      propertyPath: m_TagString
+      value: player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
