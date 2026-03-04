@@ -4,9 +4,13 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
    [SerializeField] private Asteroid _asteroidPrefab;
+  
+   private int level = 0;
    
    public int _asteroidCount = 0;
-   private int level = 0;
+   public ScoreManager _scoreManager;
+   public GameObject gameOverPanel;
+   
 
    private void Update()
    {
@@ -54,6 +58,8 @@ public class GameManager : MonoBehaviour
 
    public void GameOver()
    {
+      gameOverPanel.SetActive(true);
+      _scoreManager.HighScoreUpdate();
       StartCoroutine(Restart());
    }
 
@@ -61,7 +67,7 @@ public class GameManager : MonoBehaviour
    {
       Debug.Log("Game Over");
       
-      yield return new WaitForSeconds(2f);
+      yield return new WaitForSeconds(3f);
       
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 

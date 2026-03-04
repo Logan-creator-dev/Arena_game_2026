@@ -4,6 +4,9 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField] private ParticleSystem destroyedParticles;
     public int size = 3;
+
+    public int pointValue;
+    public ScoreManager scoreManager;
     
     public GameManager gameManager;
     private void Start()
@@ -16,11 +19,22 @@ public class Asteroid : MonoBehaviour
         rb.AddForce(direction * speed, ForceMode2D.Impulse);
 
         gameManager._asteroidCount++;
+        
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ammo"))
         {
+            if (size == 3)
+                pointValue = 10;
+            else if (size == 2)
+                pointValue = 20;
+            else if (size == 1)
+                pointValue = 10;
+            
+            scoreManager.ChangeScore(pointValue);
+            
             gameManager._asteroidCount--;
             
             Destroy(collision.gameObject);
