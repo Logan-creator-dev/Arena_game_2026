@@ -95,18 +95,15 @@ public class Character_controller : MonoBehaviour
         {
             float chance = Random.value;
 
-            if (chance < 0.15f)
+            /*if (chance < 0.15f)
             {
                 Destroy(gameObject);
-            }
-
-            else
-            {
+            }*/
                 float x = Random.Range(-8f, 8f);
                 float y = Random.Range(-4f, 4f);
 
                 transform.position = new Vector2(x, y);
-            }
+            
         }
     }
 
