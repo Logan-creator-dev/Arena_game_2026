@@ -33,8 +33,8 @@ public class ScoreManager : MonoBehaviour
         }
         
         // Modifier le TMP
-        finalScoreText.text = currentScore.ToString();
-        highScoreText.text = PlayerPrefs.GetInt("SavedHighScore").ToString();
+        finalScoreText.text = " Score : "+ currentScore.ToString();
+        highScoreText.text = "Highest : " + PlayerPrefs.GetInt("SavedHighScore").ToString();
         
     }
 }
